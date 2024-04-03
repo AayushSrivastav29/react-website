@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assests/logo.png";
+import { toast } from "react-toastify";
 
 const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
   return (
@@ -51,7 +52,14 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
 
         {IsLoggedIn && (
           <Link to="/">
-            <button>Logout</button>
+            <button
+              onClick={() => {
+                setIsLoggedIn(false);
+                toast.success("Logged out!");
+              }}
+            >
+              Logout
+            </button>
           </Link>
         )}
       </div>

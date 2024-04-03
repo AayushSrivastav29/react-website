@@ -12,6 +12,7 @@ html {
 }
 
 .navbar {
+  font-size: large;
   display: flex;
   justify-content: space-between; /* Align logo and menu items at opposite ends */
   align-items: center; /* Vertically center logo and menu items */
@@ -27,12 +28,12 @@ html {
 }
 
 .navbar-items li {
-  list-style: none; 
-  margin-right: 20px; 
+  list-style: none;
+  margin-right: 20px;
 }
 
 .navbar-items li:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 /* .navbar-buttons {

@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import Template from "../Components/Template";
+import signupImg from "../Assests/signupImg.avif";
 
-const Signup = () => {
-    return (
-        <div>
-            <h1>Signup</h1>
-        </div>
-    );
+const Signup = ({setIsLoggedIn}) => {
+  return (
+    <Template
+      title="Join the millions learning to ocde with Udemy for free!"
+      desc1="Build skills for today, tomorrow, & beyond."
+      desc2="Education to future-proof your career"
+      image={signupImg}
+      formtype="signup"
+      setIsLoggedIn={setIsLoggedIn}
+    />
+  );
 };
 
 export default Signup;

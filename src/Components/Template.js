@@ -1,5 +1,7 @@
 import React from "react";
 import pattern from "../Assests/pattern.png";
+import SignupForm from "./SignupForm";
+import LoginForm from "./LoginForm";
 
 const Template = ({ title, desc1, desc2, image, formtype, setIsLoggedIn }) => {
   return (

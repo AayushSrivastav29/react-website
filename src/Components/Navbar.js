@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../Assests/logo.png";
 import { toast } from "react-toastify";
 
-const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <div className="navbar">
       <Link to="/">
@@ -32,25 +32,26 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
       </nav>
 
       <div className="navbar-buttons">
-        {!IsLoggedIn && (
+
+        {!isLoggedIn && (
           <Link to="/login">
             <button>Login</button>
           </Link>
         )}
 
-        {!IsLoggedIn && (
+        {!isLoggedIn && (
           <Link to="/signup">
-            <button>Signup</button>
+            <button>Sign up</button>
           </Link>
         )}
 
-        {IsLoggedIn && (
+        {isLoggedIn && (
           <Link to="/dashboard">
             <button>Dashboard</button>
           </Link>
         )}
 
-        {IsLoggedIn && (
+        {isLoggedIn && (
           <Link to="/">
             <button
               onClick={() => {
@@ -58,10 +59,11 @@ const Navbar = ({ IsLoggedIn, setIsLoggedIn }) => {
                 toast.success("Logged out!");
               }}
             >
-              Logout
+              Log out
             </button>
           </Link>
         )}
+
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const SignupForm = () => {
+const SignupForm = ({ setIsLoggedIn }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -18,6 +21,13 @@ const SignupForm = () => {
     }));
   }
 
+  function submitHandler(event) {
+    event.preventDefault();
+    setIsLoggedIn(true);
+    toast.success("Signed in!");
+    navigate("/dashboard");
+  }
+
   return (
     <div>
       <div>
@@ -25,7 +35,7 @@ const SignupForm = () => {
         <button>Instructor</button>
       </div>
 
-      <form>
+      <form onSubmit={submitHandler}>
         <div>
           <label>
             <p>

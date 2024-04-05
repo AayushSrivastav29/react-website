@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const LoginForm = () => {
+const LoginForm = ({ setIsLoggedIn }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,8 +19,15 @@ const LoginForm = () => {
     }));
   }
 
+  function submitHandler(event) {
+    event.preventDefault();
+    setIsLoggedIn(true);
+    toast.success("Logged In");
+    navigate("/dashboard");
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <label>
         <p>
           Email Address<sup>*</sup>
@@ -51,18 +60,13 @@ const LoginForm = () => {
         </span>
 
         <Link to="#">
-            <p>Forgot password</p>
+          <p>Forgot password</p>
         </Link>
-
       </label>
 
       <label>
-        {/* just for checking */}
-        <Link to='/dashboard'> 
-        <button>Sign in</button>
-        </Link>
+        <button>Log in</button>
       </label>
-
     </form>
   );
 };

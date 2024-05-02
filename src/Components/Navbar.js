@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../Assests/logo.png";
+import logo from "../Assests/Layer 1.png";
 import { toast } from "react-toastify";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {

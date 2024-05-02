@@ -27,45 +27,51 @@ const LoginForm = ({ setIsLoggedIn }) => {
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
-        <p>
-          Email Address<sup>*</sup>
+    <form className="flex flex-col w-full gap-y-4 mt-6 " 
+    onSubmit={submitHandler}>
+
+      <label className=" w-full">
+
+        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Email Address<sup className="text-red-500 ">*</sup>
         </p>
-        <input
+        <input className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px] border-b-[0.1px]"
           required
           type="email"
           name="email"
-          placeholder="enter your email address"
+          placeholder="Enter your email address"
           value={formData.email}
           onChange={changeHandler}
         />
       </label>
 
-      <label>
-        <p>
-          Password<sup>*</sup>
+      <label className=" w-full relative">
+        <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+          Password<sup className="text-red-500 ">*</sup>
         </p>
-        <input
+        <input className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px] border-b-[0.5px]"
           required
           type={showPassword ? "text" : "password"}
           name="password"
-          placeholder="enter your password"
+          placeholder="Enter your password"
           value={formData.password}
           onChange={changeHandler}
         />
 
-        <span onClick={() => setShowPassword((prev) => !prev)}>
+        <span className="absolute right-3 top-[38px] cursor-pointer text-[22px]" 
+          onClick={() => setShowPassword((prev) => !prev)}>
           {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
         </span>
 
         <Link to="#">
-          <p>Forgot password</p>
+          <p className="text-xs mt-1 text-blue-100 w-max ml-auto ">
+            Forgot password</p>
         </Link>
       </label>
 
       <label>
-        <button>Log in</button>
+        <button className="bg-yellow-50 rounded-[8px] font-medium text-richblack-900 w-full px-[12px] py-[8px] mt-5"
+        >Log in</button>
       </label>
     </form>
   );

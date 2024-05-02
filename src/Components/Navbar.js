@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
-    <div className="navbar">
+    <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto ">
       <Link to="/">
         <img
           className="logo"
@@ -17,8 +17,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         />
       </Link>
 
-      <nav>
-        <ul className="navbar-items">
+      <nav >
+        <ul className="text-richblack-5 flex gap-x-6">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -31,29 +31,29 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         </ul>
       </nav>
 
-      <div className="navbar-buttons">
+      <div className="flex items-center gap-4 text-richblack-5  ">
 
         {!isLoggedIn && (
           <Link to="/login">
-            <button>Login</button>
+            <button className="bg-richblack-800 hover:bg-richblack-700 py-[8px] px-[12px] rounded-[8px] border border-richblack-700 ">Login</button>
           </Link>
         )}
 
         {!isLoggedIn && (
           <Link to="/signup">
-            <button>Sign up</button>
+            <button className="bg-richblack-800 hover:bg-richblack-700 py-[8px] px-[12px] rounded-[8px] border border-richblack-700 ">Sign up</button>
           </Link>
         )}
 
         {isLoggedIn && (
           <Link to="/dashboard">
-            <button>Dashboard</button>
+            <button className="bg-richblack-800 hover:bg-richblack-700 py-[8px] px-[12px] rounded-[8px] border border-richblack-700 ">Dashboard</button>
           </Link>
         )}
 
         {isLoggedIn && (
           <Link to="/">
-            <button
+            <button className="bg-richblack-800 hover:bg-richblack-700 py-[8px] px-[12px] rounded-[8px] border border-richblack-700 "
               onClick={() => {
                 setIsLoggedIn(false);
                 toast.success("Logged out!");

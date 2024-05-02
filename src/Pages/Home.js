@@ -2,14 +2,10 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const Home = () => {
-  function checkHandler() {
-    toast.success("checked");
-  }
 
   return (
-    <div>
+    <div className="flex h-screen justify-center items-center text-white">
       <h1>Home</h1>
-      <button onClick={checkHandler}>check toast</button>
     </div>
   );
 };
